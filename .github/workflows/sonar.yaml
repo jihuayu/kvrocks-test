@@ -26,7 +26,7 @@ jobs:
   sonarcloud:
     name: Upload to SonarCloud
     runs-on: ubuntu-22.04
-    if: github.event.workflow_run.conclusion == 'success' && github.repository_owner == 'apache'
+    if: github.event.workflow_run.conclusion == 'success' 
     steps:
       - uses: actions/checkout@v3
         with:
@@ -78,7 +78,7 @@ jobs:
           sonar-scanner \
             --define sonar.cfamily.build-wrapper-output="sonarcloud-data" \
             --define sonar.coverageReportPaths=sonarcloud-data/coverage.xml \
-            --define sonar.projectKey=apache_kvrocks \
-            --define sonar.organization=apache \
+            --define sonar.projectKey=jihuayu_kvrocks-test \
+            --define sonar.organization=jihuayu \
             --define sonar.scm.revision=${{ github.event.workflow_run.head_sha }} \
             --define sonar.pullrequest.key=$PR_NUMBER
