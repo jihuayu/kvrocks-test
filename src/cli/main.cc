@@ -49,7 +49,7 @@ Server *srv = nullptr;
 
 extern "C" void SignalHandler(int sig) {
   if (srv && !srv->IsStopped()) {
-    LOG(INFO) << "Bye Bye";
+    LOG(INFO) << "Bye Bye Bye";
     srv->Stop();
   }
 }
