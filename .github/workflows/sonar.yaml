@@ -74,8 +74,9 @@ jobs:
           PR_NUMBER=$(jq -r '.number | select (.!=null)' sonarcloud-data/github-event.json)
           HEAD_REF=$(jq -r '.head.ref | select (.!=null)' sonarcloud-data/github-event.json)
           BASE_REF=$(jq -r '.base.ref | select (.!=null)' sonarcloud-data/github-event.json)
+          REF=$(jq -r '.ref | select (.!=null)' sonarcloud-data/github-event.json)
           
-          echo "The PR number is $PR_NUMBER, head ref is $HEAD_REF, base ref is $BASE_REF"
+          echo "The PR number is $PR_NUMBER, ref is $REF, head ref is $HEAD_REF, base ref is $BASE_REF"
 
           sonar-scanner \
             --define sonar.cfamily.build-wrapper-output="sonarcloud-data" \
@@ -85,4 +86,5 @@ jobs:
             --define sonar.scm.revision=${{ github.event.workflow_run.head_sha }} \
             --define sonar.pullrequest.key=$PR_NUMBER \
             --define sonar.pullrequest.branch=$HEAD_REF \
-            --define sonar.pullrequest.base=$BASE_REF 
+            --define sonar.pullrequest.base=$BASE_REF \
+            --define sonar.projectVersion=$REF
