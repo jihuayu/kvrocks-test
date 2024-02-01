@@ -64,7 +64,7 @@ static void PrintUsage(const char *program) {
             << std::left << new_opt << "-c, --config <filename>"
             << "set config file to <filename>, or `-` for stdin" << std::endl
             << new_opt << "-v, --version"
-            << "print version information" << std::endl
+            << "print my version information" << std::endl
             << new_opt << "-h, --help"
             << "print this help message" << std::endl
             << new_opt << "--<config-key> <config-value>"
