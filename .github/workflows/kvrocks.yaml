@@ -115,7 +115,7 @@ jobs:
             sonarcloud: -DCMAKE_CXX_FLAGS=--coverage
     runs-on: ${{ matrix.os }}
     env:
-      _OUTPUT_DIR: sonarcloud-data
+      SONARCLOUD_OUTPUT_DIR: sonarcloud-data
     steps:
       - name: Setup macOS
         if: ${{ startsWith(matrix.os, 'macos') }}
