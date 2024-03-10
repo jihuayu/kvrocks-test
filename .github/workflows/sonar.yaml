@@ -88,4 +88,4 @@ jobs:
             --define sonar.pullrequest.key=$PR_NUMBER \
             --define sonar.pullrequest.branch=$HEAD_REF \
             --define sonar.pullrequest.base=$BASE_REF \
-            --define sonar.projectVersion=$REF
+            --define sonar.newCode.referenceBranch=2.7
