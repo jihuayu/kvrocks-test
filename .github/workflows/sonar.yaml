@@ -73,8 +73,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
         run: |
           PR_NUMBER=$(jq -r '.number | select (.!=null)' sonarcloud-data/github-event.json)
-          HEAD_REF=$(jq -r '.head.pull_request.ref | select (.!=null)' sonarcloud-data/github-event.json)
-          BASE_REF=$(jq -r '.base.pull_request.ref | select (.!=null)' sonarcloud-data/github-event.json)
+          HEAD_REF=$(jq -r '.pull_request.head.ref | select (.!=null)' sonarcloud-data/github-event.json)
+          BASE_REF=$(jq -r '.pull_request.base.ref | select (.!=null)' sonarcloud-data/github-event.json)
           REF=$(jq -r '.ref | select (.!=null)' sonarcloud-data/github-event.json)
           
           echo "The PR number is $PR_NUMBER, ref is $REF, head ref is $HEAD_REF, base ref is $BASE_REF"
