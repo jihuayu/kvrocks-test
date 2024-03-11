@@ -59,7 +59,7 @@ struct NewOpt {
 } new_opt;
 
 static void PrintUsage(const char *program) {
-  std::cout << program << " implements the Redis protocol based on rocksdb" << std::endl
+  std::cout << program << " implements the Redis protocol based on rocksdb rocksdb" << std::endl
             << "Usage:" << std::endl
             << std::left << new_opt << "-c, --config <filename>"
             << "set config file to <filename>, or `-` for stdin" << std::endl
