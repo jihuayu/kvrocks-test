@@ -87,5 +87,5 @@ jobs:
             --define sonar.scm.revision=${{ github.event.workflow_run.head_sha }} \
             --define sonar.pullrequest.key=$PR_NUMBER \
             --define sonar.pullrequest.branch=$HEAD_REF \
-            --define sonar.pullrequest.base=$BASE_REF \
+            --define sonar.pullrequest.base=upstream/unstable \
             --define sonar.newCode.referenceBranch=2.7
