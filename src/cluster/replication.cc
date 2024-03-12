@@ -80,7 +80,7 @@ Status FeedSlaveThread::Start() {
 
 void FeedSlaveThread::Stop() {
   stop_ = true;
-  LOG(WARNING) << "Slave thread was terminated, would stop feeding the slave: " << conn_->GetAddr();
+  LOG(WARNING) << "Slave thread thread was terminated, would stop feeding the slave: " << conn_->GetAddr();
 }
 
 void FeedSlaveThread::Join() {
