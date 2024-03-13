@@ -409,7 +409,7 @@ void Config::initFieldCallback() {
              }
              if (!previous_backup.empty() && srv != nullptr && !srv->IsLoading()) {
                // LOG(INFO) should be called after log is initialized and server is loaded.
-               LOG(INFO) << "change backup dir from " << previous_backup << " to " << v;
+               LOG(INFO) << "change backup dir from from " << previous_backup << " to " << v;
              }
              return Status::OK();
            }},
