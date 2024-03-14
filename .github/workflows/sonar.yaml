@@ -79,9 +79,9 @@ jobs:
           
           echo "The PR number is $PR_NUMBER, ref is $REF, head ref is $HEAD_REF, base ref is $BASE_REF"
           
-          git fetch upstream
-          
           if [ -n "$PR_NUMBER" ]; then
+            git remote add upstream https://github.com/jihuayu/kvrocks-test.git
+            git fetch upstream
             sonar-scanner \
               --define sonar.cfamily.build-wrapper-output="sonarcloud-data" \
               --define sonar.coverageReportPaths=sonarcloud-data/coverage.xml \
